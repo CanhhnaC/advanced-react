@@ -1,37 +1,18 @@
 {
   "name": "advanced-react",
   "version": "1.0.0",
-  "description": "Advanced React",
-  "main": "lib/server.js",
-  "repository": "jscomplete/advanced-react",
-  "author": "Samer Buna",
+  "main": "index.js",
+  "repository": "https://github.com/CanhhnaC/advanced-react.git",
+  "author": "Nguyen Tran Canh <nguyentrancanh81@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
-    "webpack": "webpack -wd",
-    "test": "jest --watch",
-    "verify-tests": "jest --coverage",
-    "build-webpack": "webpack -p",
-    "build-node": "babel lib -d build --copy-files",
-    "start-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd"
-  },
-  "babel": {
-    "presets": [
-      "react",
-      ["env", { "targets": { "node": "current" } }]
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-object-rest-spread"
-    ]
-  },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "enzyme": "^2.9.1",
     "eslint": "^4.1.0",
     "eslint-plugin-react": "^7.1.0",
     "jest": "^20.0.4",
-    "react-test-renderer": "^15.6.1"
+    "npm-run-all": "^4.1.5",
+    "react-test-renderer": "^16.13.1"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -47,9 +28,21 @@
     "lodash.pickby": "^4.6.0",
     "pm2": "^2.5.0",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
+    "react": "^16.13.1",
     "react-addons-perf": "^15.4.2",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.13.1",
     "webpack": "^3.0.0"
+  },
+  "scripts": {
+    "api": "nodemon --exec babel-node lib/server.js",
+    "dev": "webpack -wd",
+    "test": "jest --watch"
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest": true
   }
 }
