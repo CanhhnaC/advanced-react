@@ -1,0 +1,13 @@
+{
+  "name": "state-api",
+  "version": "1.0.0",
+  "description": "fake api local",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "repository": "jscomplete/state-api",
+  "author": "NTC",
+  "license": "MIT"
+}
